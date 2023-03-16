@@ -200,7 +200,7 @@ def merged_transform_3D(data_dict: Dict[str, Tensor],
 
     data_dict['image'] = image
     data_dict['masks'] = masks
-    data_dict['lsd'] = lsd(masks, sigma=(5, 5, 5), voxel_size=(1, 1, 4))
+    data_dict['lsd'] = lsd(masks, sigma=(8, 8, 8), voxel_size=(1, 1, 5))
 
     return data_dict
 

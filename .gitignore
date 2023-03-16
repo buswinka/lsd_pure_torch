@@ -3,6 +3,22 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+# ML SHIT
+*.trch
+*.tif
+*.tiff
+*.png
+*.jpeg
+*.TIF
+*.TIFF
+*.pdf
+*.eps
+*.svg
+runs/
+data/
+models/
+
 # C extensions
 *.so
 

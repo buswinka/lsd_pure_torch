@@ -100,7 +100,7 @@ def engine(
         if distributed:
             train_sampler.set_epoch(e)
 
-        for images, masks, lsd in train_data:
+        for _ in range(32): #for images, masks, lsd in train_data:
             optimizer.zero_grad(set_to_none=True)
 
             with autocast(enabled=mixed_precision):  # Saves Memory!
@@ -128,11 +128,11 @@ def engine(
         # # Validation Step
         if e % 10 == 0 and val_data:
             _loss = []
-            for images, masks, lsd in val_data:
+            for _images, _, _lsd in val_data:
                 with autocast(enabled=mixed_precision):  # Saves Memory!
                     with torch.no_grad():
-                        out: Tensor = swa_model(images)
-                        loss = loss_fn(out, lsd)
+                        out: Tensor = swa_model(_images)
+                        loss = loss_fn(out, _lsd)
 
 
                 scaler.scale(loss)
