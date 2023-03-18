@@ -16,6 +16,9 @@ dims = [32, 64, 128, 64, 32]
 model_constructor = get_constructor('unext', spatial_dim=3)  # gets the model from a name...
 backbone = model_constructor(in_channels=1, out_channels=10, dims=dims)
 model = LSDModel(backbone)
+checkpoint = torch.load('/home/chris/Desktop/lsd_pure_torch/models/lsd_unext_pretrained.trch')
+model.load_state_dict(checkpoint)
+
 
 
 test_input = torch.rand((1, 1, 300, 300, 20))

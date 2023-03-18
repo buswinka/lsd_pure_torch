@@ -100,7 +100,7 @@ def engine(
         if distributed:
             train_sampler.set_epoch(e)
 
-        for _ in range(32): #for images, masks, lsd in train_data:
+        for images, masks, lsd in train_data:
             optimizer.zero_grad(set_to_none=True)
 
             with autocast(enabled=mixed_precision):  # Saves Memory!

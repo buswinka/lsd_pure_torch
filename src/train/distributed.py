@@ -75,7 +75,7 @@ def train(rank: str,
                    pad_size=10).to(device)
 
     train_sampler = torch.utils.data.distributed.DistributedSampler(data)
-    dataloader = DataLoader(data, num_workers=0, batch_size=2, sampler=train_sampler, collate_fn=colate)
+    dataloader = DataLoader(data, num_workers=0, batch_size=1, sampler=train_sampler, collate_fn=colate)
 
     # Validation Dataset
     vl = dataset(path=validation_dir,
@@ -83,7 +83,7 @@ def train(rank: str,
                  pad_size=100).to(device)
 
     test_sampler = torch.utils.data.distributed.DistributedSampler(vl)
-    valdiation_dataloader = DataLoader(vl, num_workers=0, batch_size=2, sampler=test_sampler,
+    valdiation_dataloader = DataLoader(vl, num_workers=0, batch_size=1, sampler=test_sampler,
                                        collate_fn=colate)
 
     torch.backends.cudnn.benchmark = True
@@ -113,7 +113,7 @@ def train(rank: str,
         'mixed_precision': True,
         'rank': rank,
         'n_warmup': 10,
-        'savepath': '/home/chris/Dropbox (Partners HealthCare)/lsd_pure_torch/models',
+        'savepath': '/home/chris/Desktop/lsd_pure_torch/models',
     }
 
     writer = SummaryWriter() if rank == 0 else None
