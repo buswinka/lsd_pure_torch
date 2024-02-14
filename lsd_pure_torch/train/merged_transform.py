@@ -2,8 +2,8 @@ import torch
 from torch import Tensor
 import torchvision.transforms.functional as ttf
 from typing import Dict, Tuple, Union, Sequence, List, Callable, Optional
-from src.lib.morphology import binary_erosion, _get_binary_kernel3d
-from src.lib.lsd import lsd
+from lsd_pure_torch.lib.morphology import binary_erosion, _get_binary_kernel3d
+from lsd_pure_torch.lib.lsd import lsd
 
 import math
 from copy import deepcopy
@@ -210,7 +210,7 @@ if __name__ == '__main__':
     import tqdm
     import torch.distributed as dist
     import torch.optim.lr_scheduler
-    from src.train.dataloader import dataset, colate, MultiDataset
+    from lsd_pure_torch.train.dataloader import dataset, colate, MultiDataset
 
     from torch.utils.data import DataLoader
 

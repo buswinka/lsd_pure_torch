@@ -142,7 +142,7 @@ def __aggregate(array: Tensor, sigma: Tuple[float, ...]) -> Tensor:
 
 
 @torch.jit.ignore()
-def lsd(segmentation: Tensor, sigma: Tuple[float, float, float], voxel_size: Tuple[int, int, int]):
+def lsd(segmentation: Tensor, sigma: Tuple[float, float, float], voxel_size: Tuple[int, int, int]) -> Tensor:
     """
     Pytorch reimplementation of local-shape-descriptors without gunpowder.
     Credit goes to Jan and Arlo.
@@ -153,7 +153,7 @@ def lsd(segmentation: Tensor, sigma: Tuple[float, float, float], voxel_size: Tup
     expect inputs to be in the form (1, X, Y, Z) and outputs to be in the form: (10, X, Y, Z)
 
     Shapes:
-        - segmentation: (X, Y, Z)
+        - segmentation: (1, X, Y, Z)
         - sigma: (3)
         - voxel_size: (3)
         - returns: (C=10, X, Y, Z)

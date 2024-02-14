@@ -13,7 +13,7 @@ from torchvision.utils import flow_to_image, draw_keypoints, make_grid
 import matplotlib.pyplot as plt
 import torch.optim.swa_utils
 
-from src.train.utils import write_progress
+from lsd_pure_torch.train.utils import write_progress
 Dataset = Union[Dataset, DataLoader]
 
 # SKELETON TRAINING ENGINE

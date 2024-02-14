@@ -279,7 +279,7 @@ def colate(data_dict: List[Dict[str, Tensor]]) -> Tuple[Tensor, List[Dict[str, T
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
-    from src.train.merged_transform import merged_transform_3D
+    from lsd_pure_torch.train.merged_transform import merged_transform_3D
     from torch.utils.data import DataLoader
 
     path = '/home/chris/Dropbox (Partners HealthCare)/trainMitochondriaSegmentation/data/unscaled/train'

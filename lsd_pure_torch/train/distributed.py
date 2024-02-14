@@ -3,10 +3,10 @@ from functools import partial
 from typing import Tuple, Callable, Dict
 import os.path
 
-from src.train.dataloader import dataset, MultiDataset, colate
-from src.train.merged_transform import merged_transform_3D
-from src.train.engine import engine
-from src.train.setup import setup_process, cleanup, find_free_port
+from lsd_pure_torch.train.dataloader import dataset, MultiDataset, colate
+from lsd_pure_torch.train.merged_transform import merged_transform_3D
+from lsd_pure_torch.train.engine import engine
+from lsd_pure_torch.train.setup import setup_process, cleanup, find_free_port
 
 from torch import Tensor
 import torch.nn as nn

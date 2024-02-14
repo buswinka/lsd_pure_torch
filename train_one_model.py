@@ -4,8 +4,8 @@ import torch.multiprocessing as mp
 from bism.models import get_constructor
 from bism.models.lsd import LSDModel
 
-from src.train.distributed import train
-from src.train.setup import setup_process, cleanup, find_free_port
+from lsd_pure_torch.train.distributed import train
+from lsd_pure_torch.train.setup import setup_process, cleanup, find_free_port
 
 from functools import partial
 
